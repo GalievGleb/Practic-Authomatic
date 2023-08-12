@@ -1,26 +1,20 @@
-class ShoppingList:
+class BankAccount:
+    def __init__(self, account_number, initial_balance=0):
+        self.account_number = account_number
+        self.initial_balance = initial_balance
 
-    def __init__(self, list_name):
-        self.list_name = list_name
-        self.items = []
+    def deposit(self, amount):
+        self.initial_balance += amount
 
-    def add_item(self, item_name, quantity):
-        self.items.append({'name': item_name, 'quantity': quantity})
+    def withdraw(self, amount):
+        self.initial_balance -= amount
 
-    def remove_item(self, item_name):
-        for item in self.items:
-            if item['name'] == item_name:
-                self.items.remove(item)
-            else:
-                print("Имени такого товара нет!")
+    def display_balance(self):
+        print(f"Номер вашего счета: {self.account_number} "
+              f"Количество деняк: {self.initial_balance}")
 
-    def display_list(self):
-        print(f"Название - {self.list_name}")
-        for item in self.items:
-            print(f"Товар: {item['name']}\nКоличество: {item['quantity']}")
-
-
-one = ShoppingList("Верный")
-one.add_item("Молоко", 2)
-one.add_item("Xleb", 5)
-one.display_list()
+akbars = BankAccount(4)
+akbars.deposit(400)
+akbars.display_balance()
+akbars.withdraw(200)
+akbars.display_balance()
