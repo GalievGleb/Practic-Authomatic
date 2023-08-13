@@ -1,20 +1,23 @@
-class BankAccount:
-    def __init__(self, account_number, initial_balance=0):
-        self.account_number = account_number
-        self.initial_balance = initial_balance
+def del_3(a):
+    if a % 3 == 0:
+        print("Fizz")
+        return "Fizz"
+    else:
+        return ""
 
-    def deposit(self, amount):
-        self.initial_balance += amount
 
-    def withdraw(self, amount):
-        self.initial_balance -= amount
+def del_5(a):
+    if a % 5 == 0:
+        print("Buzz")
+        return "Buzz"
+    else:
+        return ""
 
-    def display_balance(self):
-        print(f"Номер вашего счета: {self.account_number} "
-              f"Количество деняк: {self.initial_balance}")
 
-akbars = BankAccount(4)
-akbars.deposit(400)
-akbars.display_balance()
-akbars.withdraw(200)
-akbars.display_balance()
+a = 1
+while a <= 10:
+    delenie3 = del_3(a)
+    delenit5 = del_5(a)
+    if delenie3 != "Fizz" and delenit5 != "Buzz":
+        print(a)
+    a += 1
