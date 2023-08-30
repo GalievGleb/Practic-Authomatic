@@ -1,6 +1,8 @@
 # Создайте словарь, в котором ключами будут числа от 1 до 10, а значениями
 # эти же числа, возведенные в куб.
 result: dict = None
-result = {x: x**3 for x in range(1, 11)}
+result = {}
+for x in range(1, 11):
+    result[x] = x ** 3
 
 print(f'Результат : {result}')

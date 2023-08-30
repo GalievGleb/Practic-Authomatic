@@ -2,3 +2,4 @@ print('Существует список от 1 до 100 модифициров�
 result: list = [i for i in range(1, 101)]
 result = result[:2] + result[-2:]
 print(f'Результат: {result}\n')
+

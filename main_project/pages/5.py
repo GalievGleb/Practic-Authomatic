@@ -11,7 +11,6 @@ result_2: dict = None
 result_1 = {}
 for i in range(len(list1)):
     result_1[list1[i]] = list2[i]
-
 result_2 = dict(zip(list1, list2))
 
 print(f'Результат : {result_1}')

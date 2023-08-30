@@ -3,12 +3,14 @@
 # Класс "Square" имеет поле side (сторона) типа int
 # Класс "Circle" имеет поле radius (радиус) типа int
 from math import pi
+
 print('Написать абстракцию, и классы которые наследуются и переопределяют метод')
 
 
 class Figure:
     def calc_area(self):
         raise NotImplementedError("Метод calc_area() должен быть переопределен в подклассе")
+
 
 class Square(Figure):
     def __init__(self, side: int):
@@ -17,12 +19,14 @@ class Square(Figure):
     def calc_area(self):
         return self.side ** 2
 
+
 class Circle(Figure):
     def __init__(self, radius: int):
         self.radius = radius
 
     def calc_area(self):
         return pi * self.radius ** 2
+
 
 square = Square(side=4)
 circle = Circle(radius=3)

@@ -2,25 +2,20 @@
 # Реализовать возможность сложения двух объектов класса Vector через оператор сложения "+"
 # В результате сложения получается новый объект класса Vector
 # Реализовать возможность сравнить два объекта класса Vector через оператор сравнения '=='
-print('Написать класс Vector с pеализацией сложения и сравнения объектов')
 class Vector:
     def __init__(self, x: int, y: int):
         self.x = x
         self.y = y
 
     def __add__(self, other):
-        # Перегружаем оператор сложения
         if isinstance(other, Vector):
             return Vector(self.x + other.x, self.y + other.y)
         else:
-            raise TypeError("Можно складывать только объекты класса Vector")
+            raise TypeError("Можно складывать только объекты Vector")
 
     def __eq__(self, other):
-        # Перегружаем оператор сравнения ==
-        if isinstance(other, Vector):
-            return self.x == other.x and self.y == other.y
-        else:
-            return False
+        return isinstance(other, Vector) and self.x == other.x and self.y == other.y
+
 
 # Создаем объекты Vector
 v1 = Vector(x=1, y=1)
